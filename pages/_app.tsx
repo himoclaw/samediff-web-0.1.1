@@ -1,8 +1,9 @@
 import "@/styles/globals.css";
 import Head from "next/head";
 import type { AppProps } from "next/app";
-import NProgress from "nprogress"; // Import NProgress
-import "nprogress/nprogress.css";
+import NProgress from "nprogress";
+import 'nprogress/nprogress.css';
+import '../styles/nprogress.css';
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
