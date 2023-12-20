@@ -22,7 +22,7 @@ function Type() {
         loop: true,
         delay: 65,
         deleteSpeed: 80,
-        pauseFor: 333333,
+        pauseFor: 8000,
         cursor: "|",
       }}
     />

@@ -11,8 +11,8 @@ const Contact = () => {
 
   const linkStyle = (linkIndex) => {
     const isOuterLink = linkIndex === 0 || linkIndex === 2;
-    return `text-center font-space-mono text-3xl sm:text-3xl md:text-4xl lg:text-[27px] xl:text-3xl 2xl:text-4xl transition-colors duration-300 ${
-      hoveredLink === linkIndex ? 'text-pink-400' : (isOuterLink ? 'text-sd-yellow' : 'text-sd-gray')
+    return `text-center font-space-mono text-3xl sm:text-3xl md:text-4xl lg:text-[25px] xl:text-3xl 2xl:text-4xl transition-colors duration-300 ${
+      hoveredLink === linkIndex ? 'text-sd-yellow' : (isOuterLink ? 'text-gray-400' : 'text-sd-gray')
     } break-words`;
   };
 
@@ -32,25 +32,43 @@ const Contact = () => {
 
   const paragraphVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 10, transition: { duration: 0.5 } }
+    visible: { opacity: 1, y: 10, transition: { duration: 0.8 } }
   };
 
   return (
-    <div className="relative overflow-hidden bg-sd-black w-full">
+    <div className="relative overflow-hidden bg-sd-black w-full h-screen">
       <Header className='z-20' />
       
-    {/* Manifesto Text */}
-    <div className="absolute translate-y-[-155px] w-full h-full flex justify-center items-center z-0">
+{/* Main Container */}
+    <div className="relative w-full h-full flex justify-center items-center py-12 xs:px-0 sm:px-6 md:px-10 lg:px-20 xl:px-24 2xl:px-36">
+        {/* Contact Image with Overlay */}
+        <motion.div 
+          className="relative w-full h-full"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 100, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          onMouseEnter={() => setIsImageHovered(true)}
+          onMouseLeave={() => setIsImageHovered(false)}
+        >
+          <Image src={ContactImage} alt="contact" className={`z-100 transition-opacity duration-500 ${isImageHovered ? 'opacity-20' : 'opacity-100'}`}/>
+          
+          {/* Overlay */}
+          <motion.div
+            className={`flex inset-0 bg-black opacity-100 ${isImageHovered ? 'opacity-80' : 'opacity-0'}`}
+          />
+
+          {/* Manifesto Text */}
+    <div className="absolute translate-y-[-645px]  flex justify-center items-center z-0">
       <motion.div
-        className="space-y-6 px-32 text-xl lg:text-2xl font-space-mono text-center text-white"
+        className="space-y-6 px-32 text-xl lg:text-xl font-space-mono text-center text-white"
         variants={paragraphVariants}
         initial="hidden"
         animate={isImageHovered ? "visible" : "hidden"}
       >
         <p>
           DIFFERENT VIEWS, SAME VISION.<br /><br />
-          Same Difference is a remix of two
-          ex-advertising creatives— one obsessed with the idea, the other obsessed
+          SAME DIFFERENCE is a remix of two
+          ex-advertising creatives — one obsessed with the idea, the other obsessed
           with the craft. Both with an innate desire to collaborate with
           independent artists who invest in themselves.
         </p><br />
@@ -58,26 +76,17 @@ const Contact = () => {
           We believe music is the most soulful form of human expression and video
           is the most powerful medium to foster a shared connection. Every song
           should have a music video. Every artist should have a visual album. And
-          every brand can invest in artists to reach their audience through music.<br /><br />
+          every brand can make artists partnerships the heart of an integrated campaign. 
+          It’s good for brands. And good for artists.<br /><br />
         </p>
         <p>
-          Sound like a good time?<br />
-          It is.
+          Nodding along? Drop us a line.<br /><br />
+        </p>
+        <p>
+          soundsgood@samedifference.tv
         </p>
       </motion.div>
     </div>
-
-      {/* Main Container */}
-      <div className="relative w-full h-screen flex justify-center items-center py-2 xs:px-0 sm:px-6 md:px-10 lg:px-20 xl:px-24 2xl:px-36">
-        {/* Contact Image */}
-        <motion.div className="relative w-full h-full"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          onMouseEnter={() => setIsImageHovered(true)}
-          onMouseLeave={() => setIsImageHovered(false)}
-        >
-          <Image src={ContactImage} alt="contact" className={`z-10 transition-opacity duration-500 ${isImageHovered ? 'opacity-10' : 'opacity-100'}`}/>
         </motion.div>
 
         {/* Email address container */}

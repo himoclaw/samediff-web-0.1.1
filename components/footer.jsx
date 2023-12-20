@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 
 const style = {
-  footer: `bg-transparent mt-6 py-4`,
+  footer: `bg-transparent mt-6 py-8 fixed bottom-0 left-0 w-full`,
   footerIcon: `flex justify-center pb-4 py-20 text-sd-gray text-3xl px-2 hover:text-sd-yellow cursor-pointer`,
 };
 
