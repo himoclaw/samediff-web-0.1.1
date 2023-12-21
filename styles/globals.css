@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply bg-sd-black;
+}
+
 @font-face {
     font-family: 'archivo-black';
     src: url('/fonts/Archivo_Black/ArchivoBlack-Regular.ttf') format('truetype');

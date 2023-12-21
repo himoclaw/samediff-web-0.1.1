@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Header from './header';
 import Footer from './footer';
 import Type from './Title';
-import LogoGrayCrop from "../assets/sd-gray-crop.png";
+import LogoGrayCrop from "/public/sd-gray-crop.png";
 import { motion } from 'framer-motion';
 
 const style = {
-  mainComp: `overflow-hidden bg-sd-black min-h-screen min-w-screen`,
+  mainComp: `overflow-x-hidden overflow-y-auto bg-sd-black min-h-screen min-w-screen`,
   contentContainer: `flex-1 flex flex-col justify-center items-center overflow-hidden`,
 };
 

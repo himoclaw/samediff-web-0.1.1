@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import LogoGray from "../assets/sd-gray.png";
-import LogoYellow from "../assets/sd-yellow.png";
+import LogoGray from "/public/sd-gray.png";
+import LogoYellow from "/public/sd-yellow.png";
 
 const style = {
   header: `relative z-20 flex items-center bg-transparent mr-3 px-8 max-h-[90px]`,
